@@ -1,0 +1,20 @@
+@prefix apf:      <http://jena.apache.org/ARQ/property#> .
+@prefix fx:       <http://sparql.xyz/facade-x/ns/> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix p:        <http://www.wikidata.org/prop/> .
+@prefix pq:       <http://www.wikidata.org/prop/qualifier/> .
+@prefix ps:       <http://www.wikidata.org/prop/statement/> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wd:       <http://www.wikidata.org/entity/> .
+@prefix wds:      <http://www.wikidata.org/entity/statement/> .
+@prefix wdt:      <http://www.wikidata.org/prop/direct/> .
+@prefix wdv:      <http://www.wikidata.org/value/> .
+@prefix wikibase: <http://wikiba.se/ontology#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix xyz:      <http://sparql.xyz/facade-x/data/> .
+
+wd:Q15506241  wdt:P102  wd:Q216082 .
+
+wd:Q5243805  wdt:P102  wd:Q946040 .
+
+wd:Q6035315  wdt:P102  wd:Q241149 .

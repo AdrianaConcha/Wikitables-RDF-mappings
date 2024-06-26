@@ -1,0 +1,51 @@
+
+PREFIX iter: <http://w3id.org/sparql-generate/iter/>
+PREFIX fun: <http://w3id.org/sparql-generate/fn/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX  xyz:  <http://sparql.xyz/facade-x/data/>
+PREFIX  fx:   <http://sparql.xyz/facade-x/ns/>
+PREFIX apf: <http://jena.apache.org/ARQ/property#>
+
+
+  
+  GENERATE {
+	?athleteGold wdt:P27 ?countryGold. 	
+	?athleteSilver wdt:P27 ?countrySilver. 
+	?athleteBronze wdt:P27 ?countryBronze. 
+   } 
+
+ 
+ITERATOR iter:CSV(<../Input/multiplesEntities-medalists.csv>, "Gold", "Silver","Bronze") AS ?Gold ?Silver ?Bronze
+
+
+WHERE {
+	#Gold
+	BIND(REPLACE(STRAFTER(?Gold,","),",Q[0-9]*","") AS ?secondEntityGold)
+	BIND ( IF (BOUND(?secondEntityGold) && strlen(?secondEntityGold)>0, URI(CONCAT('http://www.wikidata.org/entity/', ?secondEntityGold)),?undef) AS ?athleteGold )
+	BIND(REPLACE(?Gold,",Q[0-9]*","") AS ?firstEntityGold)
+	BIND ( IF (BOUND(?firstEntityGold) && strlen(?firstEntityGold)>0, URI(CONCAT('http://www.wikidata.org/entity/', ?firstEntityGold)),?undef) AS ?countryGold )
+
+	#Siver
+	BIND(REPLACE(STRAFTER(?Silver,","),",Q[0-9]*","") AS ?secondEntitySilver)
+	BIND ( IF (BOUND(?secondEntitySilver) && strlen(?secondEntitySilver)>0, URI(CONCAT('http://www.wikidata.org/entity/', ?secondEntitySilver)),?undef) AS ?athleteSilver )
+	BIND(REPLACE(?Silver,",Q[0-9]*","") AS ?firstEntitySilver)
+	BIND ( IF (BOUND(?firstEntitySilver) && strlen(?firstEntitySilver)>0, URI(CONCAT('http://www.wikidata.org/entity/', ?firstEntitySilver)),?undef) AS ?countrySilver )
+
+	#Bronze
+	BIND(REPLACE(STRAFTER(?Bronze,","),",Q[0-9]*","") AS ?secondEntityBronze)
+	BIND ( IF (BOUND(?secondEntityBronze) && strlen(?secondEntityBronze)>0, URI(CONCAT('http://www.wikidata.org/entity/', ?secondEntityBronze)),?undef) AS ?athleteBronze )
+	BIND(REPLACE(?Bronze,",Q[0-9]*","") AS ?firstEntityBronze)
+	BIND ( IF (BOUND(?firstEntityBronze) && strlen(?firstEntityBronze)>0, URI(CONCAT('http://www.wikidata.org/entity/', ?firstEntityBronze)),?undef) AS ?countryBronze )
+
+
+}

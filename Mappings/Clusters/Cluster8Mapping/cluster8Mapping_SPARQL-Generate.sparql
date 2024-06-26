@@ -1,0 +1,30 @@
+
+PREFIX iter: <http://w3id.org/sparql-generate/iter/>
+PREFIX fun: <http://w3id.org/sparql-generate/fn/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX  xyz:  <http://sparql.xyz/facade-x/data/>
+PREFIX  fx:   <http://sparql.xyz/facade-x/ns/>
+
+
+  
+  GENERATE {
+    ?ship wdt:P8047 ?country;
+          wdt:P31 wd:Q852190.
+	
+}
+ITERATOR iter:CSV(<../Input/cluster8.csv>, "Ship_3", "Country_3") AS ?Ship_3 ?Country_3
+
+WHERE {
+    BIND (URI(CONCAT('http://www.wikidata.org/entity/', ?Ship_3)) AS ?ship)
+    BIND (URI(CONCAT('http://www.wikidata.org/entity/', ?Country_3)) AS ?country)
+}

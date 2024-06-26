@@ -1,0 +1,28 @@
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+
+
+CONSTRUCT {
+	?album p:P444 _:review.
+	_:review ps:P444 ?rateTrim;
+	pq:P447 ?source.
+	
+}
+FROM <file:../Input/cluster3.csv>
+WHERE {
+  BIND (URI(CONCAT('http://www.wikidata.org/entity/', ?ArticleEntity)) AS ?album)
+  BIND (URI(CONCAT('http://www.wikidata.org/entity/', ?Review_score__Source_3)) AS ?source)
+  BIND(replace(?Review_score__rate_3, " ", "") as ?rateTrim)
+  FILTER(BOUND(?source) || BOUND(?Review_score__rate_3))
+}

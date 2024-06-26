@@ -1,0 +1,19 @@
+@prefix fun:      <http://w3id.org/sparql-generate/fn/> .
+@prefix fx:       <http://sparql.xyz/facade-x/ns/> .
+@prefix iter:     <http://w3id.org/sparql-generate/iter/> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix p:        <http://www.wikidata.org/prop/> .
+@prefix pq:       <http://www.wikidata.org/prop/qualifier/> .
+@prefix ps:       <http://www.wikidata.org/prop/statement/> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wd:       <http://www.wikidata.org/entity/> .
+@prefix wds:      <http://www.wikidata.org/entity/statement/> .
+@prefix wdt:      <http://www.wikidata.org/prop/direct/> .
+@prefix wdv:      <http://www.wikidata.org/value/> .
+@prefix wikibase: <http://wikiba.se/ontology#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix xyz:      <http://sparql.xyz/facade-x/data/> .
+
+wd:Q602473  wdt:P156  wd:Q1042412 .
+
+wd:Q1042417  wdt:P156  wd:Q602473 .

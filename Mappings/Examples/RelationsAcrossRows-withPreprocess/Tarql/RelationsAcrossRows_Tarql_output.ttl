@@ -1,0 +1,2 @@
+<http://www.wikidata.org/entity/Q1042417> <http://www.wikidata.org/prop/direct/P156> <http://www.wikidata.org/entity/Q602473> .
+<http://www.wikidata.org/entity/Q602473> <http://www.wikidata.org/prop/direct/P156> <http://www.wikidata.org/entity/Q1042412> .

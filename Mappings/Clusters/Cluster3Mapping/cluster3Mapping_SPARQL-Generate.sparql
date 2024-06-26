@@ -1,0 +1,33 @@
+
+PREFIX iter: <http://w3id.org/sparql-generate/iter/>
+PREFIX fun: <http://w3id.org/sparql-generate/fn/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX  xyz:  <http://sparql.xyz/facade-x/data/>
+PREFIX  fx:   <http://sparql.xyz/facade-x/ns/>
+
+
+  
+  GENERATE {
+	?album p:P444 _:review.
+	_:review ps:P444 ?Review_score__rate_3;
+	pq:P447 ?source.
+	
+}
+ITERATOR iter:CSV(<../Input/cluster3.csv>, "ArticleEntity", "Review_score__Source_3", "Review_score__rate_3") AS ?ArticleEntity ?Review_score__Source_3
+?Review_score__rate_3
+
+WHERE {
+  BIND (URI(CONCAT('http://www.wikidata.org/entity/', ?ArticleEntity)) AS ?album)
+  BIND (URI(CONCAT('http://www.wikidata.org/entity/', ?Review_score__Source_3)) AS ?source)
+  FILTER(BOUND(?source) || BOUND(?Review_score__rate_3))
+}

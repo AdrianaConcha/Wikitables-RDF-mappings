@@ -1,0 +1,56 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix transit: <http://vocab.org/transit/terms/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix wd: <http://www.wikidata.org/entity/>.
+@prefix wds: <http://www.wikidata.org/entity/statement/>.
+@prefix wdv: <http://www.wikidata.org/value/>.
+@prefix wdt: <http://www.wikidata.org/prop/direct/>.
+@prefix p: <http://www.wikidata.org/prop/>.
+@prefix ps: <http://www.wikidata.org/prop/statement/>.
+@prefix pq: <http://www.wikidata.org/prop/qualifier/>.
+@base <http://example.com/ns#>.
+
+
+<RARMapping>
+	rml:logicalSource [
+		rml:query """
+			SELECT a.game as current, b.nextGame as follower
+			FROM (
+				SELECT split_part(gameID, '''' , 1) as game,  row_number() over () AS "ID", TableID
+				FROM '../Input/cluster90.csv' 
+				
+				ORDER BY "ID" 
+				--OFFSET 1 ROW
+			) a
+			
+			JOIN 
+
+			(
+			SELECT   c.number as "nextGame", row_number() over () AS ID2, c.TableID as TableID2
+			FROM (
+				SELECT split_part(gameID, '''' , 1) as number, row_number() over () AS ID, TableID
+				FROM '../Input/cluster90.csv' 
+				
+				ORDER BY ID 
+				OFFSET 1 ROW
+			) c
+			ORDER BY ID2 
+			--OFFSET 1 ROW
+			) b
+			ON ((a.ID = b.ID2) AND (a.TableID = b.TableID2))
+
+		""" ];
+	rr:subjectMap [ 
+		rr:template "http://www.wikidata.org/entity/{current}" ];
+		rr:predicateObjectMap [
+			rr:predicate wdt:P156;
+			rr:objectMap [ rr:template "http://www.wikidata.org/entity/{follower}" ]
+        ].
+
+
+
+
+

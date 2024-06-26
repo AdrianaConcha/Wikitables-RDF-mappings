@@ -1,0 +1,4 @@
+<http://www.wikidata.org/entity/Q6418841> <http://www.wikidata.org/prop/avgPrecipitation> _:_:sourceQ641884119551999[' 12.83', ' (325.9)'] .
+_:_:sourceQ641884119551999[' 12.83', ' (325.9)'] <http://www.wikidata.org/prop/qualifier/P582> "1999" .
+_:_:sourceQ641884119551999[' 12.83', ' (325.9)'] <http://www.wikidata.org/prop/qualifier/P580> "1955" .
+_:_:sourceQ641884119551999[' 12.83', ' (325.9)'] <http://www.wikidata.org/prop/statement/avgPrecipitation> "[\' 12.83\', \' (325.9)\']" .

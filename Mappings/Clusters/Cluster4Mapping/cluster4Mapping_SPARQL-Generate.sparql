@@ -1,0 +1,73 @@
+
+PREFIX iter: <http://w3id.org/sparql-generate/iter/>
+PREFIX fun: <http://w3id.org/sparql-generate/fn/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX  xyz:  <http://sparql.xyz/facade-x/data/>
+PREFIX  fx:   <http://sparql.xyz/facade-x/ns/>
+PREFIX psv: <http://www.wikidata.org/prop/statement/value/> 
+PREFIX psn: <http://www.wikidata.org/prop/statement/value-normalized/> 
+
+
+  
+  GENERATE {
+	?song wdt:P31 wd:Q105543609;
+		wdt:P361 ?album;
+		wdt:P7937 wd:Q7366;
+                wdt:P2047 ?lengthSeconds;
+		p:P2047 ?duration.
+
+        ?duration ps:P2047 ?lengthSeconds;
+		   psv:P2047 ?b1.
+
+	 
+        ?b1 a wikibase:QuantityValue;
+		wikibase:quantityAmount ?lengthSeconds;
+ 		wikibase:quantityUnit wd:Q11574;
+		wikibase:quantityNormalized ?b1.
+
+	?album wdt:P31 wd:Q482994;
+                wdt:P658 ?song;
+		p:P658 ?tracklist.
+
+	?tracklist ps:P658 ?song;
+		pq:P1545 ?number.
+
+	
+}
+ITERATOR iter:CSV(<../Input/cluster4.csv>, "ArticleEntity", "TitleID", "length","no") AS ?ArticleEntity ?TitleID
+?length ?no
+
+WHERE {
+
+  
+BIND ( IF (BOUND(?ArticleEntity) && strlen(?ArticleEntity)>0, URI(CONCAT('http://www.wikidata.org/entity/', ?ArticleEntity)),?undef) AS ?album )
+
+BIND ( IF (BOUND(?TitleID) && strlen(?TitleID)>0,  REPLACE(replace(?TitleID, " ", ""),",Q[0-9]*",""),?undef) AS ?first )
+
+
+BIND ( IF (BOUND(?length) && strlen(?length)>0, REPLACE(REPLACE(?length,"[^0-9:]",""),"(?<=[0-9]+:[0-9]{2}).*",""),?undef) AS ?l )
+BIND ( IF (BOUND(?no) && strlen(?no)>0, REPLACE(?no,"[^0-9+]",""),?undef) AS ?n )
+BIND (URI(CONCAT('http://www.wikidata.org/entity/', ?first)) AS ?song)
+BIND (xsd:decimal(strbefore(?l,":"))*60 + xsd:decimal(strafter(?l,":"))  AS ?lengthSeconds)
+
+  BIND ( IF (BOUND(?lengthSeconds) && BOUND(?song), BNODE(),?undef) AS ?duration )
+  BIND ( IF (BOUND(?lengthSeconds) && BOUND(?song), BNODE(),?undef) AS ?b1 )
+  BIND ( IF (BOUND(?song) && BOUND(?album), BNODE(),?undef) AS ?tracklist )
+
+BIND ( IF (BOUND(?n) && strlen(?n)>0, ?n ,?undef) AS ?number )
+
+
+  VALUES ?undef {UNDEF}
+}
+
+

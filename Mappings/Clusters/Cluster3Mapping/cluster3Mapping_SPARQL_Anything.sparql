@@ -1,0 +1,33 @@
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX  xyz:  <http://sparql.xyz/facade-x/data/>
+PREFIX  fx:   <http://sparql.xyz/facade-x/ns/>
+
+CONSTRUCT
+  {
+	?album p:P444 _:review.
+	_:review ps:P444 ?Review_score__rate_3;
+	pq:P447 ?source.
+  }
+WHERE
+  { SERVICE <x-sparql-anything:location=../Input/cluster3.csv,csv.headers=true> {
+fx:properties  fx:trim-strings  true ;
+		 fx:null-string  "".
+        ?c        xyz:ArticleEntity ?ArticleEntity.
+	OPTIONAL{?c  xyz:Review_score__Source_3 ?Review_score__Source_3.}
+	OPTIONAL{?c xyz:Review_score__rate_3 ?Review_score__rate_3.}
+}
+  BIND (URI(CONCAT('http://www.wikidata.org/entity/', ?ArticleEntity)) AS ?album)
+  BIND (URI(CONCAT('http://www.wikidata.org/entity/', ?Review_score__Source_3)) AS ?source)
+  FILTER(BOUND(?source) || BOUND(?Review_score__rate_3))
+  }

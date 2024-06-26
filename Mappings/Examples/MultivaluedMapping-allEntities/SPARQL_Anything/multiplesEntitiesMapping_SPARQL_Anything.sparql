@@ -1,0 +1,35 @@
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX  xyz:  <http://sparql.xyz/facade-x/data/>
+PREFIX  fx:   <http://sparql.xyz/facade-x/ns/>
+PREFIX apf: <http://jena.apache.org/ARQ/property#>
+
+CONSTRUCT
+  {
+    ?candidate wdt:P102 ?party. 
+  }
+WHERE
+  { SERVICE <x-sparql-anything:location=../Input/multiplesEntities.csv,csv.headers=true> {
+fx:properties  fx:csv.null-string  "" .
+        ?c        xyz:Candidate ?Candidate;
+                  xyz:2_Party ?2_Party
+}
+ OPTIONAL {?CandidateSplit apf:strSplit (?Candidate ",") }
+BIND (URI(CONCAT('http://www.wikidata.org/entity/', ?CandidateSplit)) AS ?candidate)
+  BIND (URI(CONCAT('http://www.wikidata.org/entity/', ?2_Party)) AS ?party)
+  }
+
+
+
+
+

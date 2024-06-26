@@ -1,0 +1,40 @@
+@prefix fx:       <http://sparql.xyz/facade-x/ns/> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix p:        <http://www.wikidata.org/prop/> .
+@prefix pq:       <http://www.wikidata.org/prop/qualifier/> .
+@prefix ps:       <http://www.wikidata.org/prop/statement/> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wd:       <http://www.wikidata.org/entity/> .
+@prefix wds:      <http://www.wikidata.org/entity/statement/> .
+@prefix wdt:      <http://www.wikidata.org/prop/direct/> .
+@prefix wdv:      <http://www.wikidata.org/value/> .
+@prefix wikibase: <http://wikiba.se/ontology#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix xyz:      <http://sparql.xyz/facade-x/data/> .
+
+wd:Q385299  p:P1441  wd:Q274744 .
+
+wd:Q6563552  p:P1441  wd:Q2031748 .
+
+wd:Q13427026  p:P161  [ ps:P161  wd:Q453921 ] .
+
+wd:Q229202  p:P1441  wd:Q9087190 .
+
+wd:Q274744  p:P161  [ pq:P453  wd:Q385299 ;
+                      ps:P161  wd:Q453921
+                    ] ;
+        p:P674  wd:Q385299 .
+
+wd:Q9087190  p:P161  [ pq:P453  wd:Q229202 ;
+                       ps:P161  wd:Q453921
+                     ] ;
+        p:P674  wd:Q229202 .
+
+wd:Q453921  p:P106  wd:Q33999 .
+
+wd:Q7742499  p:P161  [ ps:P161  wd:Q453921 ] .
+
+wd:Q2031748  p:P161  [ pq:P453  wd:Q6563552 ;
+                       ps:P161  wd:Q453921
+                     ] ;
+        p:P674  wd:Q6563552 .

@@ -1,0 +1,37 @@
+
+PREFIX iter: <http://w3id.org/sparql-generate/iter/>
+PREFIX fun: <http://w3id.org/sparql-generate/fn/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX  xyz:  <http://sparql.xyz/facade-x/data/>
+PREFIX  fx:   <http://sparql.xyz/facade-x/ns/>
+
+
+  
+  GENERATE {
+ ?title p:P674 ?role. 
+	?role  p:P1441 ?title.
+	?title p:P161 _:cast.
+	_:cast ps:P161 ?actor;
+	       pq:P453 ?role.
+	?actor p:P106 wd:Q33999.
+   } 
+
+ 
+ITERATOR iter:CSV(<../Input/bnodesMapping.csv>, "ArticleEntity", "Title","Role") AS ?ArticleEntity ?Title ?Role
+
+
+WHERE {
+ BIND (URI(CONCAT('http://www.wikidata.org/entity/', ?Title)) AS ?title)
+  BIND (URI(CONCAT('http://www.wikidata.org/entity/', ?Role)) AS ?role)
+  BIND (URI(CONCAT('http://www.wikidata.org/entity/', ?ArticleEntity)) AS ?actor)
+}

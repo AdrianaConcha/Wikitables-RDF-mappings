@@ -1,0 +1,6 @@
+<http://www.wikidata.org/entity/Q571095> <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q145> .
+<http://www.wikidata.org/entity/Q525287> <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q145> .
+<http://www.wikidata.org/entity/Q1726993> <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q833> .
+<http://www.wikidata.org/entity/Q867189> <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q833> .
+<http://www.wikidata.org/entity/Q2247692> <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q55> .
+<http://www.wikidata.org/entity/Q3660925> <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q79> .

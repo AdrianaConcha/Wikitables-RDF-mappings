@@ -1,0 +1,4 @@
+<http://www.wikidata.org/entity/Q6418841> <http://www.wikidata.org/prop/avgPrecipitation> _:B8b2441e8X2Da4bdX2D4cafX2Da396X2Dd6264c19b7fb .
+_:B8b2441e8X2Da4bdX2D4cafX2Da396X2Dd6264c19b7fb <http://www.wikidata.org/prop/statement/avgPrecipitation> "[' 12.83', ' (325.9)']" .
+_:B8b2441e8X2Da4bdX2D4cafX2Da396X2Dd6264c19b7fb <http://www.wikidata.org/prop/qualifier/P580> "1955" .
+_:B8b2441e8X2Da4bdX2D4cafX2Da396X2Dd6264c19b7fb <http://www.wikidata.org/prop/qualifier/P582> "1999" .

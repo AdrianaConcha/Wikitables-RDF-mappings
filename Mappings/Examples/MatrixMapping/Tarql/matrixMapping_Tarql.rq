@@ -1,0 +1,31 @@
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+
+CONSTRUCT {
+    ?location p:avgPrecipitation ?precipitation.
+    ?precipitation ps:avgPrecipitation ?precipitationYear;
+                   pq:P580 ?start;
+                   pq:P582 ?end  .
+}
+FROM <file:../Input/975024_1.csv>
+WHERE {
+    BIND ( IF (BOUND(?ArticleEntity) && strlen(?ArticleEntity)>0, URI(CONCAT('http://www.wikidata.org/entity/', ?ArticleEntity)),?undef) AS ?location)
+    # The following BINDs are for extracting the period of time of the precipitation height
+    BIND ( IF (BOUND(?Title) && strlen(?Title)>0, REPLACE(REPLACE(?Title,"[^0-9-]",""),REPLACE(REPLACE(?Title,"[^0-9-]",""),"^([0-9]{4}-[0-9]{4}?)",""),"")  ,?undef) AS ?period )
+    BIND ( STRBEFORE(?period,"-") as ?start )
+    BIND ( STRAFTER(?period,"-") as ?end  )
+    # The variable 'precipitationYear' is only defined if we are on the precipitation row
+    BIND ( IF (BOUND(?Month) && strlen(?Month)>0 &&  ?Month = "Q25257", ?Year  ,?undef) AS ?precipitationYear )
+    BIND ( IF (BOUND(?precipitationYear), BNODE(),?undef) AS ?precipitation )
+    VALUES ?undef {UNDEF}
+

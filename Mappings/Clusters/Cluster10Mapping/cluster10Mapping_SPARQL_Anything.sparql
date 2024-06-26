@@ -1,0 +1,30 @@
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX  xyz:  <http://sparql.xyz/facade-x/data/>
+PREFIX  fx:   <http://sparql.xyz/facade-x/ns/>
+
+CONSTRUCT
+  {
+    ?player wdt:P413 ?position.
+  }
+WHERE
+  { SERVICE <x-sparql-anything:location=../Input/cluster10.csv,csv.headers=true> {
+fx:properties  fx:csv.null-string  "" .
+        ?c      xyz:Player_3 ?Player_3;
+		xyz:Position_3 ?Position_3
+}
+    BIND (URI(CONCAT('http://www.wikidata.org/entity/', ?Player_3)) AS ?player)
+    BIND (URI(CONCAT('http://www.wikidata.org/entity/', ?Position_3)) AS ?position)
+
+  }
+

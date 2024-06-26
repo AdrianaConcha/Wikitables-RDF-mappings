@@ -1,0 +1,35 @@
+
+PREFIX iter: <http://w3id.org/sparql-generate/iter/>
+PREFIX fun: <http://w3id.org/sparql-generate/fn/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wds: <http://www.wikidata.org/entity/statement/>
+PREFIX wdv: <http://www.wikidata.org/value/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX  xyz:  <http://sparql.xyz/facade-x/data/>
+PREFIX  fx:   <http://sparql.xyz/facade-x/ns/>
+
+
+  
+  GENERATE {
+   ?games wdt:P156 ?games_next. 
+   } 
+
+ 
+ITERATOR iter:CSV(<../Input/cluster90preprocessed.csv>, "gameID1", "gameID2") AS ?gameID1 ?gameID2
+
+
+WHERE {
+BIND(REPLACE(?gameID1, " ", "") as ?gameID1trim)
+BIND(REPLACE(?gameID2, " ", "") as ?gameID2trim)
+ BIND(REPLACE(?gameID1trim,",Q[0-9]*","") AS ?firstGameID1)
+ BIND(REPLACE(?gameID2trim,",Q[0-9]*","") AS ?firstGameID2)
+BIND (URI(CONCAT('http://www.wikidata.org/entity/', ?firstGameID1)) AS ?games)
+BIND (URI(CONCAT('http://www.wikidata.org/entity/', ?firstGameID2)) AS ?games_next)
+}

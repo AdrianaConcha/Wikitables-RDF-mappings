@@ -1,0 +1,28 @@
+@prefix apf:      <http://jena.apache.org/ARQ/property#> .
+@prefix fun:      <http://w3id.org/sparql-generate/fn/> .
+@prefix fx:       <http://sparql.xyz/facade-x/ns/> .
+@prefix iter:     <http://w3id.org/sparql-generate/iter/> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix p:        <http://www.wikidata.org/prop/> .
+@prefix pq:       <http://www.wikidata.org/prop/qualifier/> .
+@prefix ps:       <http://www.wikidata.org/prop/statement/> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wd:       <http://www.wikidata.org/entity/> .
+@prefix wds:      <http://www.wikidata.org/entity/statement/> .
+@prefix wdt:      <http://www.wikidata.org/prop/direct/> .
+@prefix wdv:      <http://www.wikidata.org/value/> .
+@prefix wikibase: <http://wikiba.se/ontology#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix xyz:      <http://sparql.xyz/facade-x/data/> .
+
+wd:Q15506241  wdt:P102  wd:Q216082 .
+
+wd:Q6035315  wdt:P102  wd:Q241149 .
+
+wd:Q1260232  wdt:P102  wd:Q1260232 .
+
+wd:Q5243805  wdt:P102  wd:Q946040 .
+
+wd:Q5307201  wdt:P102  wd:Q781486 .
+
+wd:Q6264818  wdt:P102  wd:Q781392 .

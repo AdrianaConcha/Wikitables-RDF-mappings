@@ -1,0 +1,89 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix transit: <http://vocab.org/transit/terms/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix wd: <http://www.wikidata.org/entity/>.
+@prefix wds: <http://www.wikidata.org/entity/statement/>.
+@prefix wdv: <http://www.wikidata.org/value/>.
+@prefix wdt: <http://www.wikidata.org/prop/direct/>.
+@prefix p: <http://www.wikidata.org/prop/>.
+@prefix ps: <http://www.wikidata.org/prop/statement/>.
+@prefix pq: <http://www.wikidata.org/prop/qualifier/>.
+@base <http://example.com/ns#>.
+
+<#Cluster7Mapping> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source  "../Input/cluster7.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "http://www.wikidata.org/entity/{Title_3}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate wdt:P674;
+        rr:objectMap [
+            rr:template "http://www.wikidata.org/entity/{Role_3}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate p:P161;
+        rr:objectMap [
+            rr:parentTriplesMap <#Cast>;
+            rr:joinCondition [
+                rr:child "Title_3";
+                rr:parent "Title_3";
+            ];	
+        ]
+    ]. 
+<#Cast> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source  "../Input/cluster7.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:termType rr:BlankNode;		
+    ];
+    rr:predicateObjectMap [
+        rr:predicate ps:P161;
+        rr:objectMap [
+            rr:template "http://www.wikidata.org/entity/{ArticleEntity}"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate  pq:P453;
+        rr:objectMap [
+            rr:template "http://www.wikidata.org/entity/{Role_3}"
+        ]
+    ].
+<#Role> a rr:TriplesMap;
+    rml:logicalSource[
+        rml:source  "../Input/cluster7.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "http://www.wikidata.org/entity/{Role_3}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate wdt:P1441;
+        rr:objectMap [
+            rr:template "http://www.wikidata.org/entity/{Title_3}"
+        ]
+    ]. 
+<#Actor> a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source  "../Input/cluster7.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+    rr:subjectMap [
+        rr:template "http://www.wikidata.org/entity/{ArticleEntity}";
+    ];
+    rr:predicateObjectMap [
+        rr:predicate wdt:P106;
+        rr:objectMap [
+            rr:template "http://www.wikidata.org/entity/Q33999"
+        ]
+    ]. 
+
+
