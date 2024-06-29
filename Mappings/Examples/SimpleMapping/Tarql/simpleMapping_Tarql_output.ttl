@@ -1,17 +1,3 @@
-<http://www.wikidata.org/entity/Q8012328> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q216082> .
-<http://www.wikidata.org/entity/Q118051> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q216082> .
-<http://www.wikidata.org/entity/Q6132824> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q1324190> .
-<http://www.wikidata.org/entity/Q6143638> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q216082> .
-<http://www.wikidata.org/entity/Q6232973> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q1453449> .
-<http://www.wikidata.org/entity/Q7790057> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q1324190> .
-<http://www.wikidata.org/entity/Q4757548> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q1324190> .
-<http://www.wikidata.org/entity/Q6220926> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q1324190> .
-<http://www.wikidata.org/entity/Q13520204> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q1324190> .
-<http://www.wikidata.org/entity/Q4722493> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q1324190> .
-<http://www.wikidata.org/entity/Q5339744> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q1324190> .
-<http://www.wikidata.org/entity/Q16030649> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q1324190> .
-<http://www.wikidata.org/entity/Q6239766> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q327591> .
-<http://www.wikidata.org/entity/Q5240388> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q1324190> .
-<http://www.wikidata.org/entity/Q6280927> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q1453449> .
-<http://www.wikidata.org/entity/Q5078761> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q1324190> .
-<http://www.wikidata.org/entity/Q1339847> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q1339847> .
+version https://git-lfs.github.com/spec/v1
+oid sha256:1e03f3487b08a977c8fece9c860a7c66fa52912eea43140521ba98d7af3bb067
+size 2190

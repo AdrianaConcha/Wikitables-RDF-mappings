@@ -1,6 +1,3 @@
-<http://www.wikidata.org/entity/Q6264818> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q781392> .
-<http://www.wikidata.org/entity/Q1260232> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q1260232> .
-<http://www.wikidata.org/entity/Q6035315> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q241149> .
-<http://www.wikidata.org/entity/Q5243805> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q946040> .
-<http://www.wikidata.org/entity/Q5307201> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q781486> .
-<http://www.wikidata.org/entity/Q15506241> <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q216082> .
+version https://git-lfs.github.com/spec/v1
+oid sha256:079f0cda82f2f95693eb18d282fcb7b57fea841675297373475536da8e9c0fb1
+size 770

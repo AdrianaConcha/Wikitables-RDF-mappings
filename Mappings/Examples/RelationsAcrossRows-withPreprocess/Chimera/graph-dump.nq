@@ -1,2 +1,3 @@
-<http://www.wikidata.org/entity/Q1042417> <http://www.wikidata.org/prop/direct/P156> <http://www.wikidata.org/entity/Q602473> .
-<http://www.wikidata.org/entity/Q602473> <http://www.wikidata.org/prop/direct/P156> <http://www.wikidata.org/entity/Q1042412> .
+version https://git-lfs.github.com/spec/v1
+oid sha256:cdf1547e81c37a0ccff2c371763b988f1bdc2d68c35a8a7c12cba12c6a3ff3ec
+size 256

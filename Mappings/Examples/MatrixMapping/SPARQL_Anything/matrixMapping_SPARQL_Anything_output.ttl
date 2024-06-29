@@ -1,18 +1,3 @@
-@prefix fx:       <http://sparql.xyz/facade-x/ns/> .
-@prefix owl:      <http://www.w3.org/2002/07/owl#> .
-@prefix p:        <http://www.wikidata.org/prop/> .
-@prefix pq:       <http://www.wikidata.org/prop/qualifier/> .
-@prefix ps:       <http://www.wikidata.org/prop/statement/> .
-@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix wd:       <http://www.wikidata.org/entity/> .
-@prefix wds:      <http://www.wikidata.org/entity/statement/> .
-@prefix wdt:      <http://www.wikidata.org/prop/direct/> .
-@prefix wdv:      <http://www.wikidata.org/value/> .
-@prefix wikibase: <http://wikiba.se/ontology#> .
-@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
-@prefix xyz:      <http://sparql.xyz/facade-x/data/> .
-
-wd:Q6418841  p:avgPrecipitation  [ pq:P580              "1955" ;
-                                   pq:P582              "1999" ;
-                                   ps:avgPrecipitation  "[' 12.83', ' (325.9)']"
-                                 ] .
+version https://git-lfs.github.com/spec/v1
+oid sha256:a11bef2f96ecc2cca6d64d3e175d27806278c1f72703a24141c90d0bfbe772e5
+size 981

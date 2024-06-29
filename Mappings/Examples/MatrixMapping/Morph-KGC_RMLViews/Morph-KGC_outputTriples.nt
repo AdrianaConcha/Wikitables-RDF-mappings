@@ -1,4 +1,3 @@
-<http://www.wikidata.org/entity/Q6418841> <http://www.wikidata.org/prop/avgPrecipitation> _:_:sourceQ641884119551999[' 12.83', ' (325.9)'] .
-_:_:sourceQ641884119551999[' 12.83', ' (325.9)'] <http://www.wikidata.org/prop/qualifier/P582> "1999" .
-_:_:sourceQ641884119551999[' 12.83', ' (325.9)'] <http://www.wikidata.org/prop/qualifier/P580> "1955" .
-_:_:sourceQ641884119551999[' 12.83', ' (325.9)'] <http://www.wikidata.org/prop/statement/avgPrecipitation> "[\' 12.83\', \' (325.9)\']" .
+version https://git-lfs.github.com/spec/v1
+oid sha256:9ba54f724732b54ff5cbc63c2486e69167053e96c8e40519098b7acb88d62e6c
+size 487

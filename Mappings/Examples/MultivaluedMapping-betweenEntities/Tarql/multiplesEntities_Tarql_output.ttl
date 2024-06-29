@@ -1,6 +1,3 @@
-<http://www.wikidata.org/entity/Q571095> <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q145> .
-<http://www.wikidata.org/entity/Q525287> <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q145> .
-<http://www.wikidata.org/entity/Q1726993> <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q833> .
-<http://www.wikidata.org/entity/Q867189> <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q833> .
-<http://www.wikidata.org/entity/Q2247692> <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q55> .
-<http://www.wikidata.org/entity/Q3660925> <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q79> .
+version https://git-lfs.github.com/spec/v1
+oid sha256:34ceb44e7089276ce149b7d9bf627cb22c304620a906a7076913e0bb969ab668
+size 739

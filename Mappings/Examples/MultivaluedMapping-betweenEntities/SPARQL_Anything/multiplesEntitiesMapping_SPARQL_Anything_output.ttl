@@ -1,26 +1,3 @@
-@prefix apf:      <http://jena.apache.org/ARQ/property#> .
-@prefix fx:       <http://sparql.xyz/facade-x/ns/> .
-@prefix owl:      <http://www.w3.org/2002/07/owl#> .
-@prefix p:        <http://www.wikidata.org/prop/> .
-@prefix pq:       <http://www.wikidata.org/prop/qualifier/> .
-@prefix ps:       <http://www.wikidata.org/prop/statement/> .
-@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix wd:       <http://www.wikidata.org/entity/> .
-@prefix wds:      <http://www.wikidata.org/entity/statement/> .
-@prefix wdt:      <http://www.wikidata.org/prop/direct/> .
-@prefix wdv:      <http://www.wikidata.org/value/> .
-@prefix wikibase: <http://wikiba.se/ontology#> .
-@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
-@prefix xyz:      <http://sparql.xyz/facade-x/data/> .
-
-wd:Q571095  wdt:P27  wd:Q145 .
-
-wd:Q2247692  wdt:P27  wd:Q55 .
-
-wd:Q525287  wdt:P27  wd:Q145 .
-
-wd:Q867189  wdt:P27  wd:Q833 .
-
-wd:Q1726993  wdt:P27  wd:Q833 .
-
-wd:Q3660925  wdt:P27  wd:Q79 .
+version https://git-lfs.github.com/spec/v1
+oid sha256:55a90db855ea71d81e13c221204993ff71f6d0f78e7de7c4b1a6fd0dfd794158
+size 984

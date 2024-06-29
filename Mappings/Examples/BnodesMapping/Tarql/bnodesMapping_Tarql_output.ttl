@@ -1,24 +1,3 @@
-<http://www.wikidata.org/entity/Q9087190> <http://www.wikidata.org/prop/P674> <http://www.wikidata.org/entity/Q229202> .
-<http://www.wikidata.org/entity/Q229202> <http://www.wikidata.org/prop/P1441> <http://www.wikidata.org/entity/Q9087190> .
-<http://www.wikidata.org/entity/Q9087190> <http://www.wikidata.org/prop/P161> _:B27da80f5X2Db14aX2D4804X2Da1b1X2D08c78b2fb6c1 .
-_:B27da80f5X2Db14aX2D4804X2Da1b1X2D08c78b2fb6c1 <http://www.wikidata.org/prop/statement/P161> <http://www.wikidata.org/entity/Q453921> .
-_:B27da80f5X2Db14aX2D4804X2Da1b1X2D08c78b2fb6c1 <http://www.wikidata.org/prop/qualifier/P453> <http://www.wikidata.org/entity/Q229202> .
-<http://www.wikidata.org/entity/Q453921> <http://www.wikidata.org/prop/P106> <http://www.wikidata.org/entity/Q33999> .
-<http://www.wikidata.org/entity/Q2031748> <http://www.wikidata.org/prop/P674> <http://www.wikidata.org/entity/Q6563552> .
-<http://www.wikidata.org/entity/Q6563552> <http://www.wikidata.org/prop/P1441> <http://www.wikidata.org/entity/Q2031748> .
-<http://www.wikidata.org/entity/Q2031748> <http://www.wikidata.org/prop/P161> _:B7d08f63cX2Dd134X2D4e0cX2Db46fX2D81f12c0f1632 .
-_:B7d08f63cX2Dd134X2D4e0cX2Db46fX2D81f12c0f1632 <http://www.wikidata.org/prop/statement/P161> <http://www.wikidata.org/entity/Q453921> .
-_:B7d08f63cX2Dd134X2D4e0cX2Db46fX2D81f12c0f1632 <http://www.wikidata.org/prop/qualifier/P453> <http://www.wikidata.org/entity/Q6563552> .
-<http://www.wikidata.org/entity/Q453921> <http://www.wikidata.org/prop/P106> <http://www.wikidata.org/entity/Q33999> .
-<http://www.wikidata.org/entity/Q13427026> <http://www.wikidata.org/prop/P161> _:B72b1685cX2D5e39X2D4a0fX2D9e93X2D64026db95170 .
-_:B72b1685cX2D5e39X2D4a0fX2D9e93X2D64026db95170 <http://www.wikidata.org/prop/statement/P161> <http://www.wikidata.org/entity/Q453921> .
-<http://www.wikidata.org/entity/Q453921> <http://www.wikidata.org/prop/P106> <http://www.wikidata.org/entity/Q33999> .
-<http://www.wikidata.org/entity/Q7742499> <http://www.wikidata.org/prop/P161> _:B6a31b6e4X2D2631X2D408dX2D8a28X2D0f0b151070d9 .
-_:B6a31b6e4X2D2631X2D408dX2D8a28X2D0f0b151070d9 <http://www.wikidata.org/prop/statement/P161> <http://www.wikidata.org/entity/Q453921> .
-<http://www.wikidata.org/entity/Q453921> <http://www.wikidata.org/prop/P106> <http://www.wikidata.org/entity/Q33999> .
-<http://www.wikidata.org/entity/Q274744> <http://www.wikidata.org/prop/P674> <http://www.wikidata.org/entity/Q385299> .
-<http://www.wikidata.org/entity/Q385299> <http://www.wikidata.org/prop/P1441> <http://www.wikidata.org/entity/Q274744> .
-<http://www.wikidata.org/entity/Q274744> <http://www.wikidata.org/prop/P161> _:B15732b19X2D66f9X2D4b96X2D8493X2Dfc23108a1c90 .
-_:B15732b19X2D66f9X2D4b96X2D8493X2Dfc23108a1c90 <http://www.wikidata.org/prop/statement/P161> <http://www.wikidata.org/entity/Q453921> .
-_:B15732b19X2D66f9X2D4b96X2D8493X2Dfc23108a1c90 <http://www.wikidata.org/prop/qualifier/P453> <http://www.wikidata.org/entity/Q385299> .
-<http://www.wikidata.org/entity/Q453921> <http://www.wikidata.org/prop/P106> <http://www.wikidata.org/entity/Q33999> .
+version https://git-lfs.github.com/spec/v1
+oid sha256:b2745567f9a44e7ff250eca30923e50271c53d1f1adb0b319de3dedae64a437d
+size 3061

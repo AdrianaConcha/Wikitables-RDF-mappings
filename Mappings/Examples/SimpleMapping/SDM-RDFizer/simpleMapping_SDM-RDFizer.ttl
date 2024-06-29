@@ -1,30 +1,3 @@
-@prefix rr: <http://www.w3.org/ns/r2rml#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix ex: <http://example.com/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
-@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
-@prefix wd: <http://www.wikidata.org/entity/>.
-@prefix wds: <http://www.wikidata.org/entity/statement/>.
-@prefix wdv: <http://www.wikidata.org/value/>.
-@prefix wdt: <http://www.wikidata.org/prop/direct/>.
-@prefix wikibase: <http://wikiba.se/ontology#> .
-
-<SimpleMapping>
-  a rr:TriplesMap;
-    
-  rml:logicalSource [
-    rml:source "../Input/simpleMapping.csv";
-    rml:referenceFormulation ql:CSV
-  ];
-  rr:subjectMap [
-    rr:template "http://www.wikidata.org/entity/{Candidate}";
-    
-  ]; 
-  rr:predicateObjectMap [ 
-    rr:predicate wdt:P102; 
-    rr:objectMap [
-	rr:template "http://www.wikidata.org/entity/{2_Party}";
-    ];
-  ].
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:51f539e02ea026588379d9e071ac7f9b8ec59c0775eaa59cdefa4257498c0ece
+size 908
